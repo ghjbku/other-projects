@@ -1,0 +1,135 @@
+(define <id> <expression>)
+
+(define pi 3.14)
+
+
+(define (<id>     <id>*) <expression>+)
+	      param.lista
+
+> (define (foo a)(substring a 0 3))
+> (foo "abrakaadda")
+"abr"
+
+REPL
+#t true
+#f false
+() {} [] ",'`;#\| nem haszn. azonosítóként
+
+függvény hívás:
+(<id> <expr>*)
+
+> (substring "Hódmezőhelyvásár" 0 5)
+"Hódme"
+> (string-append "Hód" "Mező" "hely")
+"HódMezőhely"
+> (string-length "mezőhelyhód")
+11
+> (string? "mezőhódvásár")
+#t 
+> (sqrt -16)
+0+4i
+> (+ 25 6 23 1 67 7 8 2 9)
+148
+> (- 2 44)
+-42
+> (> 5 2)
+#t
+> (< 5 2)
+#f
+> (number? "asd")
+#f
+> (= 5 2)
+#f
+> (equal? "macska" 2012)
+#f
+
+(if <expr> <expr> <expr>)
+ ha nem hamis-akkor a 2-dik, ha hamis akkor a 3-dik expr
+
+> (if (> 3 2) "nagyobb" "kisebb")
+"nagyobb"
+> (if 1 "egy" "nem egy")
+"egy"
+> (if -1 "minusz" "plusz")
+"minusz"
+> (define (reply s)
+    (if (equal? "hello" (substring s 0 5))
+        "hi!"
+        "nem hi"))
+> (reply "hello")
+"hi!"
+> (reply "welcome ")
+"nem hi"
+> (reply 12345)
+. . substring: contract violation
+  expected: string?
+  given: 12345
+  argument position: 1st
+  other arguments...:
+> (reply "asd")
+. . substring: ending index is out of range
+  ending index: 5
+  starting index: 0
+  valid range: [0, 3]
+  string: "asd"
+(and <expr>*)  ha a paraméterek közül hamis valamelyik, akkor hamis, egyébként az utolsó paraméter
+(or <expr>*) ha igaz, akkor az első igaz értéket adja vissza, egyébként hamis
+> (and)
+#t
+> (or)
+#f
+
+(define (reply s)
+  (if (string? s)
+      (if (>= (string-length s) 5)
+          (if (equal? "hello" (substring s 0 5))
+                          "hi"
+                          "huh?")
+          "huh?")
+        "huh?")
+      )
+
+(define (reply s)
+  (if(and(string? s )(>= (string-length s) 5)
+          (equal? "hello" (substring s 0 5))
+                         )
+           "hi"
+           "huh?")
+        )
+
+f1=0
+f2=1
+fn=fn-1 +fn-2 ha n>2
+
+(define (fibo n)
+  (if(> n 2) 
+     (+ (fibo (- n 1)) (fibo (- n 2)))
+     1)
+)
+(require racket/trace)
+(trace fibo)
+(fibo 12)
+kommentelés |# 
+#|(fibo 12)|#
+
+(define my-fact(lambda (x)
+		(if (= x 0)
+		1
+		(* x (my-fact (- x 1)))
+		)
+		)
+)
+
+(define mypow
+  (lambda (base exp)
+  (if (= 0 exp)
+      1
+      (* base (mypow base (- exp 1))))))
+
+
+
+(- 4 (+ 1 1))
+      redex    =reducible expression- redukálható kifejezés
+
+continuation =minden, ami a redex után van
+
