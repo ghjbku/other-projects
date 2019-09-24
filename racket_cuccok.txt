@@ -133,3 +133,13 @@ kommentelés |#
 
 continuation =minden, ami a redex után van
 
+tail position:
+
+expr1 farok pozícióban van expr2-re nézve, ha valahányszor expr1 egy redex, akkor az ő continuation-je azonos az expr2 continuation-jével.
+
+
+C[(+ 1 1)] = C[(-4 [])]
+C[(- 4 [])]= C
+
+(if (zero? 0) (+ 1 1) 3)
+C[(if (zero? 0) (+ 1 1) 3)] = C[(if #t (+ 1 1) 3)] = C[(+ 1 1)]
