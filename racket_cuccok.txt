@@ -194,3 +194,7 @@ binds: ((vl expr) (v2 expr)...)
 6
 
 
+(let ((p1 v1) (p2 v2) ...) expr1 expr2 ...) egyenértékű:
+((lambda (p1 p2 ...) expr1 expr2 ...) v1 v2 ...)
+
+
