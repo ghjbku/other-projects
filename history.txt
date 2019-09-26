@@ -1018,3 +1018,4 @@
   373  curl https://www.youtube.com/watch?v=pTBjHjRhx_Y -b cookies.txt -o /dev/null -v //hitelesítés a -b vel
   374  history
   375  history >> history.txt
+authorization: basuc un:pw (ez a base64)
