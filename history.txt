@@ -643,3 +643,378 @@
   226  curl https://www.skype.com/de/ -v --user-agent "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36"
   227  curl https://www.skype.com/de/ -v --user-agent "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36" -o skype-de-onsamsungs6.html
   228  history >> history.txt
+    1  sudo bash
+    2  cd NetBeansProjects/
+    3  ls
+    4  rm -rf *
+    5  cd Letöltések/
+    6  ls
+    7  ./Apache-NetBeans-11.1-bin-linux-x64.sh 
+    8  ls
+    9  ./racket-7.4-x86_64-linux.sh 
+   10  cd
+   11  cd racket/
+   12  ls
+   13  cd bin
+   14  ls
+   15  ./drracket 
+   16  cd
+   17  cd Letöltések/
+   18  ls
+   19  tar xvfz eclipse-inst-linux64.tar.gz 
+   20  ls
+   21  cd eclipse-installer/
+   22  ls
+   23  ./eclipse-inst 
+   24  cd
+   25  cd eclipse/
+   26  cd java-2019-06/
+   27  ls
+   28  cd eclipse/
+   29  ls
+   30  ./eclipse 
+   31  intellij-idea-community 
+   32  cd
+   33  cd eclipse-workspace/
+   34  ls
+   35  rm -rf *
+   36  cd ../IdeaProjects/
+   37  ls
+   38  rm -rf *
+   39  cd
+   40  rm -rf aaa
+   41  cd racket/bin
+   42  ./drracket 
+   43  gedit Asztal/Eclipse_Java.desktop
+   44  cp Asztal/Eclipse\ Java.desktop Asztal/Eclipse\ JavaEE.desktop 
+   45  gedit Asztal/Eclipse\ JavaEE.desktop 
+   46  cp Asztal/Eclipse\ Java.desktop Asztal/Eclipse\ C++.desktop 
+   47  gedit Asztal/Eclipse\ C++.desktop 
+   48  cp Asztal/Eclipse\ Java.desktop Asztal/DrRacket.desktop 
+   49  gedit Asztal/DrRacket.desktop 
+   50  mc
+   51  OA
+   52  curl
+   53  curl -s "https://get.sdkman.io" | bash
+   54  sdk list java
+   55  java -version
+   56  sdk install java 12.0.2-open
+   57  java -version
+   58  mc
+   59  wget
+   60  java -version
+   61  sdk list java
+   62  echo $JAVA_HOME
+   63  sdk list java
+   64  source /etc/profile.d/java.sh 
+   65  echo $JAVA_HOME
+   66  java -version
+   67  which java
+   68  javac -version
+   69  sdk list java
+   70  java -version
+   71  sdk list java
+   72  mc
+   73  gedit 
+   74  gedit .profile 
+   75  gedit .bashrc 
+   76  echo $JAVA_HOME
+   77  which java
+   78  java -version
+   79  sdk
+   80  curl -s "https://get.sdkman.io" | bash
+   81  source "$HOME/.sdkman/bin/sdkman-init.sh"
+   82  sdk version
+   83  sdk list java
+   84  sdk ls java
+   85  sdk install java 12.0.2-open
+   86  sdk install java 11.0.2-open
+   87  sdk list java
+   88  java -version
+   89  sdk use java 12.0.2-open
+   90  java -version
+   91  sdk help
+   92  ll .sdkman/candidates/
+   93  ll .sdkman/candidates/java/
+   94  java -version
+   95  ll /opt/
+   96  sdk install java 1.8.0_221 /opt/jdk1.8.0_221
+   97  sdk list java
+   98  sdk use java 1.8.0_221
+   99  java -version
+  100  sdk default java va -version
+  101  sdk default java 1.8.0_221
+  102  sdk list java
+  103  ll /etc/profile.d/java.sh 
+  104  mc
+  105  vim
+  106  konsole &
+  107  python3
+  108  pip3
+  109  nvim
+  110  konsole &
+  111  pip3
+  112  bpython
+  113  bpython3
+  114  ipython
+  115  ipython3
+  116  virtualenv
+  117  virtualenv3
+  118  virtualenv
+  119  code
+  120  mongo
+  121  code
+  122  mongo
+  123  python
+  124  python3
+  125  gedit
+  126  subl
+  127  exit
+  128  ls
+  129  cd Letöltések/
+  130  ls
+  131  chmod +x oxygen-64bit.sh 
+  132  ./oxygen-64bit.sh 
+  133  apt-get install httpie
+  134  touch asd.txt
+  135  ls
+  136  mv asd.txt Asztal
+  137  make
+  138  make
+  139  ./curl
+  140  curl
+  141  curl --help
+  142  cd ..
+  143  ls
+  144  cd node-v10.16.3-linux-x64/
+  145  ls
+  146  curl -O https://nodejs.org/dist/vx.y.z/SHASUMS256.txt
+  147  curl -O https://nodejs.org/dist/vx.y.z/SHASUMS256.txt.sig
+  148  ls
+  149  cd ..
+  150  ls
+  151  cd curl-7.66.0/
+  152  ls
+  153  curl -v
+  154  curl --v
+  155  curl --version
+  156  curl -h
+  157  man curl
+  158  curl -M
+  159  curl -M >> man.txt
+  160  ls
+  161  cat man.txt
+  162  mv man.txt Asztal
+  163  ls
+  164  cd Aszt
+  165  cd Asztal
+  166  mv Asztal man.txt
+  167  ls
+  168  cat man.txt 
+  169  mv man.txt ~/Asztal
+  170  curl http:/ip-api.com/json
+  171  curl http:/ip-api.com/json >> ~/Asztal/asd.txt
+  172  curl -O
+  173  curl http:/ip-api.com/json -O
+  174  ls
+  175  rm json
+  176  ls
+  177  cd ..
+  178  ls
+  179  cd
+  180  ls
+  181  cd Asztal/
+  182  ls
+  183  mkdir Curl_cuccok
+  184  ls
+  185  cd Curl_cuccok/
+  186  ls
+  187  curl http:/ip-api.com/json -O
+  188  curl http:/ip-api.com/json -s
+  189  curl http:/ip-api.com/json -O -s
+  190  curl http:/ip-api.com/json -o -s
+  191  curl http:/ip-api.com/json -o
+  192  curl http:/ip-api.com/json -o ip-api.json
+  193  curl http:/ip-api.com/json -o ip-api.json -s
+  194  ls
+  195  rm -s
+  196  rm "-s"
+  197  rm ./-s
+  198  ls
+  199  curl http:/ip-api.com/json -o ip-api.json --dump-header header.txt -s
+  200  ls
+  201  cat header.txt 
+  202  hystory
+  203  history
+  204  history >> history.txt
+  205  curl http:/ip-api.com/json -o ip-api.json --dump-header header.txt -s --trace - | less
+  206  curl http:/ip-api.com/json -o ip-api.json --dump-header header.txt -s --trace - | less >> tracing.txxt
+  207  curl http:/ip-api.com/json -o ip-api.json --dump-header header.txt -s --trace
+  208  ls
+  209  rm tracing.txxt
+  210  ls
+  211  curl http://www.gnu.org/ -v -H
+  212  curl http://www.gnu.org/ -v -H "Accept-Language: de"
+  213  curl http://www.gnu.org/ -v -H "Accept-Language: de" -o gnu-de.html
+  214  ls
+  215  history >> history.txt
+  216  curl http://www.skype.com/ -v
+  217  curl https://www.skype.com/ -v
+  218  curl https://www.skype.com/en -v
+  219  curl https://www.skype.com/en/ -v
+  220  curl https://www.skype.com/en/ -v -H "Accept-Language: de"
+  221  curl https://www.skype.com/en/ -v -H "Accept-Language: de" -o skype-de.html
+  222  ls
+  223  curl https://www.skype.com/de/ -v -H "Accept-Language: de"
+  224  curl https://www.skype.com/de/ -v
+  225  curl https://www.skype.com/de/ -v -o skype-de.html
+  226  curl https://www.skype.com/de/ -v --user-agent Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36
+  227  curl https://www.skype.com/de/ -v --user-agent "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36"
+  228  curl https://www.skype.com/de/ -v --user-agent "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36" -o skype-de-onsamsungs6.html
+  229  history >> history.txt
+  230  ls
+  231  ld
+  232  ls
+  233  chmod 777 Miniconda3-latest-Linux-x86_64.sh 
+  234  ./Miniconda3-latest-Linux-x86_64.sh 
+  235  conda install -c conda-forge httpie
+  236  curl http://dbpedia.org/resource/Grumpy_Cat -v
+  237  curl http://dbpedia.org/resource/Grumpy_Cat -v -L
+  238  curl http://dbpedia.org/resource/Grumpy_Cat -v -L -H "Accept: text/html"
+  239  ls
+  240  cd Asztal/
+  241  ls
+  242  cd Curl_cuccok/
+  243  ls
+  244  curl http://dbpedia.org/resource/Grumpy_Cat -v -L -H "Accept: text/html" -o Grumpy_cat.html
+  245  ls
+  246  firefox Grumpy_cat.html 
+  247  curl http://dbpedia.org/resource/Grumpy_Cat -v -L -H "Accept: application/json"
+  248  curl http://dbpedia.org/resource/Grumpy_Cat -v -L -H "Accept: application/json" -O 
+  249  ls
+  250  curl http://dbpedia.org/resource/Grumpy_Cat -v -L -H "Accept: application/json" -o Grumpy_cat.json
+  251  ls
+  252  cat Grumpy_cat.json 
+  253  firefox Grumpy_cat.json
+  254  firefox Grumpy_cat.html 
+  255  oxygen
+  256  curl https://www.gnu.org/licenses/gpl.html
+  257  curl https://www.gnu.org/licenses/gpl.html -v
+  258  curl https://www.gnu.org/licenses/gpl.html -v -L
+  259  curl https://www.gnu.org/licenses/gpl.\{html,md,txt\} -O
+  260  ls
+  261  gedit gpl.md
+  262  firefox gpl.html 
+  263  mkdir asdd
+  264  cd asdd/
+  265  curl "https://www.gnu.org/licenses/gpl.{html,md,txt}" -O -v
+  266  ls
+  267  firefox gpl.html 
+  268  gedit gpl.txt 
+  269  ls -a
+  270  .ls
+  271  ls -la
+  272  curl "https://www.gnu.org/licenses/gpl.{html,md,txt}" -O -v -L
+  273  ls
+  274  ls -la
+  275  firefox gpl.html 
+  276  curl "https://www.gnu.org/licenses/gpl.{html,md,txt}" --create-dirs -o "licenses/gpl-3.0.#1"
+  277  ls
+  278  cd licenses/
+  279  ls
+  280  firefox gpl-3.0.html 
+  281  cd ..
+  282  mkdir pelda2
+  283  cd pelda2/
+  284  ls
+  285  curl https://en.wikisource.org/wiki/The_Hound_of_the_Baskervilles/Chapter_[1-15] -O
+  286  ls
+  287  firefox Chapter_1
+  288  curl https://en.wikisource.org/wiki/The_Hound_of_the_Baskervilles/Chapter_[1-15] --create-dirs -o "The_Hound_of_the_Baskervilles/Chapter_#1.html"
+  289  ls
+  290  cd The_Hound_of_the_Baskervilles/
+  291  ls
+  292  cd ..
+  293  ls
+  294  curl https://www.gnu.org/licenses/gpl-3.0.txt -O https://www.apache.org/licenses/LICENSE-2.0.txt -O
+  295  ls
+  296  gedit LICENSE-2.0.txt 
+  297  cd ..
+  298  ls
+  299  mkdir osm_pelda
+  300  cd osm_pelda/
+  301  curl https://download.bbbike.org/osm/bbbike/Budapest/Budapest.osm.gz -O
+  302  curl https://download.bbbike.org/osm/bbbike/Budapest/Budapest.osm.gz -O -C -
+  303  ls
+  304  cd ..
+  305  ls
+  306  mkdir tartomany
+  307  cd tartomany/
+  308  curl https://www.gnu.org/licenses/gpl-3.0.txt -r 0-99
+  309  ls
+  310  curl https://www.gnu.org/licenses/gpl-3.0.txt -r 0-99
+  311  curl https://www.gnu.org/licenses/gpl-3.0.txt -r 0-99 -v
+  312  curl https://www.gnu.org/licenses/gpl-3.0.txt -r -100 -v
+  313  curl https://www.gnu.org/licenses/gpl-3.0.txt -r 0-99,-100 -v
+  314  cd ..
+  315  mkdir felteteles
+  316  cd felteteles/
+  317  curl https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.csv -O --http1.1 -v
+  318  sleep 60; curl https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.csv -O --http1.1 -z all_hour.csv -v
+  319  cd ..
+  320  mkdir urlapok
+  321  cd urlapok/
+  322  curl https://www.bookdepository.com/search?searchTerm=sherlock+holmes\&search=Find+book -o search.html -v
+  323  ls
+  324  firefox search.html 
+  325  curl --get https://www.bookdepository.com/search -d "searchTerm=sherlock+holmes" -d "search=Find+book" -o search.html -v
+  326  ls
+  327  firefox search.html 
+  328  touch ora.txt
+  329  gedit ora.txt 
+  330  curl https://www.base64encode.org/ --http1.1 -d input=Hello,\ world! -d charset=UTF-8 -d separator=LF -o output.html --trace-ascii trace.txt -s
+  331  ls
+  332  gedit trace.txt 
+  333  firefox output.html 
+  334  http
+  335  http --version
+  336  http http://ip-api.com/json
+  337  http http://ip-api.com/json --download
+  338  űls
+  339  ls
+  340  http http://ip-api.com/json -d
+  341  http http://w3.org --follow -d -o w3.html -v
+  342  http http://www.gnu.org/ Accept-Language:de -p Hh -d -o gnu.de.html
+  343  ls
+  344  firefox gnu.de.html 
+  345  http https://www.youtube.com/ "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A5370a Safari/604.1"
+  346  curl https://uhunt.onlinejudge.org/api/p/num/[1-199] --create-dirs -o "uhuntcuccok/uhunt_#1.json"
+  347  ls
+  348  cd uhuntcuccok/
+  349  ls
+  350  curl https://uhunt.onlinejudge.org/api/p/num/[100-199] --create-dirs -o "uhuntcuccok/#1.json"
+  351  curl https://uhunt.onlinejudge.org/api/p/num/[100-199] -O #1.json
+  352  curl https://uhunt.onlinejudge.org/api/p/num/[100-199] --create-dirs -o "uhuntcuccok/#1.json"
+  353  ls
+  354  httpie
+  355  http
+  356  man rm -f
+  357  curl https://api.github.com/user -v
+  358  curl https://www.youtube.com/ -c cookies.txt -o youtube.html -v
+  359  ls
+  360  firefox youtube.html 
+  361  rm -f cookies.txt
+  362  ls
+  363  firefox youtube.html 
+  364  curl https://www.youtube.com/ -c cookies.txt -o asd/youtube.html -v
+  365  ls
+  366  curl https://www.youtube.com/ -c cookies.txt -o /asd/youtube.html -v
+  367  ls
+  368  ls -la
+  369  curl https://www.youtube.com/watch?v=pTBjHjRhx_Y -b cookies.txt -o /dev/null -v
+  370  ls
+  371  cat cookies.txt
+  372  ls
+  373  curl https://www.youtube.com/watch?v=pTBjHjRhx_Y -b cookies.txt -o /dev/null -v //hitelesítés a -b vel
+  374  history
+  375  history >> history.txt
