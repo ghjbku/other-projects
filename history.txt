@@ -1019,3 +1019,4 @@
   374  history
   375  history >> history.txt
 authorization: basic un:pw (ez a base64)
+http://httpbin.org/
