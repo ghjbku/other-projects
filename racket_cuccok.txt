@@ -354,7 +354,7 @@ sub1
 
 
 (map proc lst...+)
-
+----------------------------
 (map (lambda (n) (+ 1 n)) '(1 2 3 4) )
 
 >'(2 3 4 5)
@@ -362,3 +362,53 @@ sub1
 
 (map (lambda (a b) (+ a b)) '(1 2 3 4) '(10 100 1000 1111))
 '(11 102 1003 1115)
+
+
+(andmap proc lst ...+)
+(andmap f (list x y z)) <=> (and (f x) (f y) (f z))
+-----------------------------
+(andmap positive? '(1 2 3))
+#t
+(andmap positive? '(1 -2 a))
+#f
+(andmap positive? '(1 2 a))
+positive?: contract violation
+  expected: real?
+(andmap + '(1 2 3) '( 4 5 6))
+9<-- 3+6(utolsó elemek)
+
+(ormap proc lst...+)
+(ormap f (list x y z)) <=> (or (f x) (f y) (f z))
+------------------------------------------------
+(ormap eq? '(a b c) '(a b c))
+#t
+(ormap positive? '(1 2 a))
+#t
+(ormap + '(1 2 3) '(4 5 6))
+5
+
+(for-each proc lst...+)
+----------------------------------
+(for-each (lambda (n) (printf "Paraméter ~a\n" n))'(1 2 3 4)) 
+Paraméter 1
+Paraméter 2
+Paraméter 3
+Paraméter 4
+
+(foldl proc init lst...+)
+(foldr proc init lst...+)
+---------------------------------
+(foldl cons '() '(1 2 3 4))
+'(4 3 2 1)
+(foldl + 0 '( 1 2 3 4))
+10
+(foldl (lambda (a b result) (* result (- a b))) 1 '( 1 2 3 4) '(5 6 7 8))
+256
+
+(foldr cons '() '(1 2 3 4))
+'(1 2 3 4)
+(foldr (lambda (v l) (cons (add1 v) l)) '() '(1 2 3 4))
+'(2 3 4 5)
+
+
+
