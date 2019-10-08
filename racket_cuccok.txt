@@ -437,3 +437,5 @@ Paraméter 4
 '(3 4 5 5 3 66 764)
 
 ---------(my-remove value lst)----------------
+1.vált: eltávolitja a value első előfordulását
+2.vált: eltoválítja az összes előfordulálst
