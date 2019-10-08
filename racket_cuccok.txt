@@ -202,3 +202,163 @@ binds: ((vl expr) (v2 expr)...)
 (define (quadric a b c)
   
   )
+
+
+
+
+letrec 
+(do binds (predicate value) body), ahol
+binds= ([p1 i1 u1] [p2 i2 u2] ...)
+
+
+
+listák
+
+pair(pár)
+car
+cdr
+
+list(lista)
+vagy üres(null), vagy olyan pár, amelynek a másik tagja egy lista
+
+
+
+
+(pair? 1) 
+#f
+(pair? (cons 1 2))
+#t
+(pair? (list 1 2))
+#t
+(pair? '(1 2))
+#t
+(pair? '())
+#f
+
+(null? 1)
+#f
+(null? '(2 1))
+#f
+(null? '())
+#t
+(null? (cdr (list 1)))
+#t      ^^^a végét kérjük le
+
+(displayln "---")
+
+(cons 1 2)
+'(1 . 2)
+
+(cons 1 '())
+'(1)
+
+(car '(1 2))
+1^^^az elejét kérjük le
+(car (cons 2 3))
+2
+(cdr '(1 2))
+'(2)
+(cdr '(1))
+'()
+
+null
+'()
+(eq? '() null)
+#t
+
+(list? '(1 2))
+#t
+(list? (cons 1(cons 2 '() )))
+#t
+(list? (cons 1 2))
+#f
+
+(list 1 2 3 4)
+'(1 2 3 4)
+(list (list 1 2) (list 3 4))
+'((1 2) (3 4))
+
+   ˇˇˇˇaz utolsó argumentumot berakja faroknak
+(list* 1 2)
+'(1 . 2)
+(list* 1 2 (list 3 4))
+'(1 2 3 4)
+
+(build-list 10 values)
+'(0 1 2 3 4 5 6 7 8 9)
+(build-list 5 (lambda (x) (* x x)))
+'(0 1 4 9 16)
+
+(length (list 1 2 3 4))
+4
+(length '())
+0
+
+(list-ref (list 1 2 3 4) 2)
+3
+(list-ref (list 'a 'b 'c) 0)
+'a
+(list-ref (list 'a 'b 'c) 1)
+'b
+(list-ref (list 'a 'b 'c) 2)
+'c
+
+(list-ref (cons 1 2) 0)
+1
+(list-ref (cons 1 2) 1)
+index reaches a non-pair
+  index: 1
+  in: '(1 . 2)
+
+
+(list-tail (list 1 2 3 4 5) 2)
+'(3 4 5)
+(list-tail (cons 1 2) 1)
+2
+(list-tail (cons 1 2) 2)
+nem pár, error
+(list-tail 'not-a-pair 0)
+'not-a-pair
+
+(append (list 1 2) (list 3 4) (list 4 5 6) (list 1 3 2))
+'(1 2 3 4 4 5 6 1 3 2)
+(reverse (list 1 2 3 4 5))
+'(5 4 3 2 1)
+
+(define (my-reverse lst)
+(let loop ((lst lst) (new-lst null))
+  (cond
+    [(null? lst) new-lst]
+    [else (loop (cdr lst) (cons (car lst) new-lst))]
+  )
+)
+)
+
+(define (my-reverse2 lst)
+(cond
+[(null? lst) lst]
+[else (append (my-reverse2 (cdr lst)) (list (car lst)))]
+)
+)
+
+(define (my-length2 lst)
+  (define (myl l n)
+(cond
+  [(null? l) n]
+  [else (myl (cdr l) (add1 n))]))
+  (myl lst 0))
+
+add1
+sub1
+
+
+
+(map proc lst...+)
+
+(map (lambda (n) (+ 1 n)) '(1 2 3 4) )
+
+>'(2 3 4 5)
+
+
+(map (lambda (a b) (+ a b)) '(1 2 3 4) '(10 100 1000 1111))
+'(11 102 1003 1115)
