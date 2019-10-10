@@ -8,3 +8,5 @@ http://httpbin.org/
 https://d3js.org/
 
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+https://swagger.io/
