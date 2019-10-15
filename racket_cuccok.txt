@@ -476,4 +476,172 @@ az elemeket az equal? predikátummal hasonlitja össze
 úgy müködik mint a member, de az elemekt az eqv? predikátummal hasonlitja ossze
 (memq v list) 
 úgy müködik mint a member, de az elemekt az eq? predikátummal hasonlitja ossze
+(memf proc list)
+(findf proc list)
 ---------------------------------
+(memf (lambda (arg) (> arg 9)) '( 7 8 9 10 11))
+'(10 11)
+(findf (lambda (arg) (> arg 9)) '( 7 8 9 10 11))
+10
+
+(assoc v list)
+(assoc v list is-equal?)
+---------------------------------------
+
+(assoc 3 (list (list 1 2) (list 3 4) (list 5 6)))
+'(3 4)
+
+(assoc 9 (list (list 1 2) (list 3 4) (list 5 6)))
+#f
+
+(assoc 3.5 (list (list 1 2) (list 3 4) (list 5 6)) (lambda (a b) (< (abs (- a b)) ) 1))
+'(1 2)
+
+(assv v lst)-->összehasonlitásra eqv?
+(assq v lst)--> eq?
+-------------------------------------
+
+(assv 3 (list (list 1 2) (list 3 4) (list 5 6)))
+'(3 4)
+
+(assv 'c (list (list 'a 'b) (list 'c 'd) (list 'e 'f)))
+'(c d)
+
+(assf proc list)
+-----------------------------------------
+(assf (lambda (x) (> x 2)) (list (list 1 2) (list 3 4) (list 5 6)))
+'(3 4)
+(displayln "----------------------------")
+
+
+---------------hozzáférő függvények röviditései----------------
+
+(car (car '((1 2) 3 4)))
+1
+(caar  '((1 2) 3 4))
+1
+
+(car (cdr '((1 2) 3 4)))
+3
+(cadr  '((1 2) 3 4))
+3
+
+(cdr (car '((1 2) 3 4)))
+'(2)
+(cdar  '((1 2) 3 4))
+'(2)
+
+(cdr (cdr '((1 2) 3 4)))
+'(4)
+
+(cddr  '((1 2) 3 4))
+'(4)
+
+(caaaar '(((((1)2)3)4)5) )
+'(1)
+
+----------------további listakezelő fvek és szinonimák--------------
+(require racket/list)
+
+empty
+'()
+
+(eq? empty null)
+#t
+(cons? '(1 2))
+#t
+(pair? '(1 2))
+#t
+(empty? '())
+#t
+(empty? '('a))
+#f
+
+(first '(1 2 3 4 5 6 7 8 9 10)) -->car
+1
+(second '(1 2 3 4 5 6 7 8 9 10))
+2
+(rest '(1 2 3 4 5 6 7 8 9 10)) -->cdr
+'(2 3 4 5 6 7 8 9 10)
+(tenth '(1 2 3 4 5 6 7 8 9 10))-->ez a max
+10
+(last '(1 2 3 4 5 6 7 8 9 10 11))
+11
+(define (my-last lst) (car(reverse lst)))
+
+(define (my-last2 lst) (car(list-tail lst (sub1 (length lst)))))
+
+(last-pair p)
+-----------------------------------------------
+(last-pair '(1 2 3 4))
+'(4)
+
+(make-list k v) k elemű listát, v értékekből
+---------------------------
+(make-list 7 'foo)
+'(foo foo foo foo foo foo foo)
+
+
+(list-update lst pos updater)  végrehajtja az (updater (list-ref lst pos)) fgv-t 
+-----------------------------------------------
+
+(list-update '(zero one two) 0 symbol->string)
+'("zero" 1 two)
+
+(list-set lst pos value)
+-------------------------------
+(list-set '(zero 1 two) 2 "two")
+'(zero 1 "two")
+
+
+(index-of lst v)
+(index-of lst v is-equal?)
+-----------------------------------------
+(index-of '(1 535 2 6 7 35 7 8 3 2 6 4) 2)
+2
+(index-of '(1 535 2 6 7 35 7 8 3 2 6 4) 5 <)-->a 0.dik helyyen álló cucc kisebb, mint 5
+0
+
+(index-where lst proc)
+-----------------------------------------
+(index-where '(1 2 3 4) even?) --> az 1. pozicióban páros elem van
+1
+
+
+(indexes-where lst proc)
+-----------------------------------
+(index-where '(1 2 3 4) even?)
+'(1 3)
+
+
+(index-of lst v)
+-------------------------------------------
+(indexes-of '(3 2 1 3 2 1 32 1 2 3 4 4 3 2 1 2 1 21 32 2 3) 3)
+'(0 3 9 12 20)
+
+
+
+(take lst pos)
+-------------------------------
+(take '(1 4 5 2 23 54 6 7 89  4 3 12 6  752) 6)--> az első 6 elemből létrehoz egy listát
+'(1 4 5 2 23 54)
+
+(drop lst pos)-->az első 'pos' elemet kihagyja a listából
+---------------------------
+(drop '(1 2 3 4 5 6 7 8 9 10) 6)
+'(7 8 9 10)
+
+(split-at lst pos)
+------------------------------------------
+(split-at '(1 2 34 4 5 6 7 8 9 10) 5)
+'(1 2 34 4 5)
+'(6 7 8 9 10)
+
+(values (take '(1 2 3 4 5 6 7 8 9 10) 5) (drop '(1 2 3 4 5 6 7 8 9 10) 5))
+'(1 2 3 4 5)
+'(6 7 8 9 10)
+
+
+-----------(define (my-take lst pos))------
+-----------(define (my-drop lst pos))------
+
