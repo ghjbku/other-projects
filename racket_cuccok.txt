@@ -439,3 +439,41 @@ Paraméter 4
 ---------(my-remove value lst)----------------
 1.vált: eltávolitja a value első előfordulását
 2.vált: eltoválítja az összes előfordulálst
+
+
+(sort lst less-than?)
+--------------------------------------------
+(sort '(1 3 4 2) >)
+'(4 3 2 1)
+
+(sort '(1 3 4 2) <)
+'(1 2 3 4)
+
+(sort '("barack" "necske" "low" "kob") string<?)
+'("barack" "kob" "low" "necske")
+
+(sort lst less-than? #:key extract-key #:cache-keys? cache-key?)
+----------------------------------------------------
+(sort '(("barack") ("necske") ("low") ("kob")) #:key car string<?)
+'(("barack") ("kob") ("low") ("necske"))
+
+keresés listákban
+(member v list)
+(member v list is-equal?)
+az elemeket az equal? predikátummal hasonlitja össze
+--------------------------------------
+(member 2 (list 1 2 3 4))
+'(2 3 4)
+
+(member 9 (list 1 2 3 4 9))
+'(9)
+
+(member #'x (list #'x 2 3 #'y) free-identifier=?)
+'(#<syntax:C:\Users\hallgato\Documents\15_dike.rkt:19:20 x> 2 3 
+#<syntax:C:\Users\hallgato\Documents\15_dike.rkt:19:28 y>)
+
+(memv v list) 
+úgy müködik mint a member, de az elemekt az eqv? predikátummal hasonlitja ossze
+(memq v list) 
+úgy müködik mint a member, de az elemekt az eq? predikátummal hasonlitja ossze
+---------------------------------
