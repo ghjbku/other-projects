@@ -711,5 +711,16 @@ empty
 '(1 9 3 2 4 5)
 '(8 6)
 
+(string->list)/(list->string)
+-----------------------------
 
 
+
+(define (lcs a b)
+  (let ((a-lst (string->list a)) (b-lst(string->list b)))
+    (define (lcs/list a-lst b-lst)
+    (cond
+      [(or (empty? a-lst) (empty? b-lst)) 0]
+      [(eq? (car a-lst) (car b-lst)) (+ 1 (lcs/list (cdr a-lst) (cdr b-lst)))]
+      [else (max (lcs/list a-lst (cdr b-lst)) (lcs/list (cdr a-lst) b-lst))]))
+  (lcs/list a-lst b-lst)))
