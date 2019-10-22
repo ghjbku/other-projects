@@ -645,3 +645,71 @@ empty
 -----------(define (my-take lst pos))------
 -----------(define (my-drop lst pos))------
 
+
+(takef list pred) vissszaadja a pred-et kielegítő elemeket,addig amig nem talál hamis elemet
+--------------------------
+(takef '(2 4 5 8) even?)
+'(2 4)
+(takef '(2 4 6 8) odd?)
+'()
+(takef '(2 4 . 6) even?)
+'(2 4)
+
+(dropf list pred)
+---------------------------------
+(dropf '(2 4 5 8) even?)
+'(5 8)
+(dropf '(2 4 6 8) even?)
+'()
+(dropf '(2 4 6 8) odd?)
+'(2 4 6 8)
+(dropf '(2 4 . 6) even?)
+6
+
+(splitf-at lst pred) <=> (values (takef lst pred) (dropf lst pred))
+----------------------------------
+(splitf-at '(1 9 3 2 4 5 8 6) even?)
+'()
+'(1 9 3 2 4 5 8 6)
+
+(splitf-at '(1 9 3 2 4 5 8 6) odd?)
+'(1 9 3)
+'(2 4 5 8 6)
+
+(take-right lst pos)/(drop-right lst pos)
+------------------------------------
+(take-right '(1 9 3 2 4 5 8 6) 3)
+'(5 8 6)
+
+(drop-right '(1 9 3 2 4 5 8 6) 3)
+'(1 9 3 2 4)
+
+(split-at-right lst pos)
+------------------------------------
+(split-at-right '(1 9 3 2 4 5 8 6) 3)
+'(1 9 3 2 4)
+'(5 8 6)
+
+(takef-right lst pred)/(dropf-right lst pred)
+-------------------------------------
+(takef-right '(1 9 3 2 4 5 8 6) odd?)
+'()
+(takef-right '(1 9 3 2 4 5 8 6) even?)
+'(8 6)
+
+(dropf-right '(1 9 3 2 4 5 8 6) odd?)
+'(1 9 3 2 4 5 8 6)
+(dropf-right '(1 9 3 2 4 5 8 6) even?)
+'(1 9 3 2 4 5)
+
+(splitf-at-right)
+--------------------------------------------
+(splitf-at-right '(1 9 3 2 4 5 8 6) odd?)
+'(1 9 3 2 4 5 8 6)
+'()
+(splitf-at-right '(1 9 3 2 4 5 8 6) even?)
+'(1 9 3 2 4 5)
+'(8 6)
+
+
+
