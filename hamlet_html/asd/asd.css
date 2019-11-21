@@ -1,0 +1,13 @@
+pre{background-color: cornsilk;
+counter-reset: line-n;
+padding: 0.5em;}
+pre>span::before{
+    counter-increment: line-n;
+    display: inline-block;
+    width: 2em;
+    content: counter(line-n) ".";
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+    text-align: right;
+    border-right: medium solid limegreen; 
+}

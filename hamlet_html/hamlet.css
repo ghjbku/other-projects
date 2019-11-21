@@ -1,0 +1,60 @@
+body{
+   display: block; 
+   border: thin solid black;
+   width: 50%;
+   margin: 1em;
+}
+h1{
+    text-align: center
+}
+header,nav{margin: 1em;
+padding: 1em;}
+header{font-variant: small-caps;
+letter-spacing: 0.25em;
+}
+p.author
+{
+text-align: center;
+font-size: x-large;
+}
+nav,section.act{
+    border-top: medium solid black;
+    margin: 1em;
+}
+a{color: slateblue;
+text-decoration: none;
+}
+a:hover{background-color:slateblue;
+color: white; }
+section.scene>h1{
+    border: thin solid red;
+    padding: 0.5em;
+}
+div.speaker{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.stagedir{font-style: italic;
+color:gray;}
+.stagedir::before{content: "(";}
+
+.stagedir::after{content: ")";}
+section.scene>div.stagedir{text-align: center;}
+div.speech, section.scene>div.stagedir{
+    padding: 1em;
+}
+div.speaker>span.stagedir{
+    text-transform: none;
+    font-weight: normal;
+}
+div.line:hover,div.stagedir:hover{background-color: lightcoral;
+color: white;}
+section.scene>div:nth-of-type(odd){background-color: aliceblue;
+border-top: medium solid slateblue;}
+section.scene>div:nth-of-type(even){
+    border-top: medium solid silver;}
+section.act{counter-reset: line-counter;
+}
+div.speech>div.line::after{content: counter(line-counter) "th line";
+counter-increment: line-counter;
+float: right;}
