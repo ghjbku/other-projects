@@ -724,3 +724,54 @@ empty
       [(eq? (car a-lst) (car b-lst)) (+ 1 (lcs/list (cdr a-lst) (cdr b-lst)))]
       [else (max (lcs/list a-lst (cdr b-lst)) (lcs/list (cdr a-lst) b-lst))]))
   (lcs/list a-lst b-lst)))
+szerkesztési távolság(edit distance), levenstein-távolság
+
+
+(define (editdist a b)
+  (let ((a-lst (string->list a)) (b-lst(string->list b)))
+    (define (edit-dist/list a-lst b-lst)
+    (cond
+      [(and (empty? a-lst) (empty? b-lst)) 0]
+      [(empty? a-lst) (length b-lst)]
+      [(empty? b-lst) (length a-lst)]
+      [(eq? (car a-lst) (car b-lst)) (edit-dist/list (cdr a-lst) (cdr b-lst))]
+      [else (+ 1 (min (edit-dist/list a-lst (cdr b-lst))
+                 (edit-dist/list (cdr a-lst) b-lst)
+                 (edit-dist/list (cdr a-lst) (cdr b-lst))))]))
+  (edit-dist/list a-lst b-lst)))
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+#lang racket
+;(name (make-hash))
+;(hash-set)
+;(hash-ref)
+
+
+(define (editdist a b)
+  (let ((a-lst (string->list a)) (b-lst(string->list b))(ht (make-hash)))
+    (define (edit-dist/list a-lst b-lst)
+     (let ((value (hash-ref ht (list a-lst b-lst) #f)))
+       (if value
+           value
+           (let ((result(cond
+                          [(and (empty? a-lst) (empty? b-lst)) 0]
+                          [(empty? a-lst) (length b-lst)]
+                          [(empty? b-lst) (length a-lst)]
+                          [(eq? (car a-lst) (car b-lst)) (edit-dist/list (cdr a-lst) (cdr b-lst))]
+                          [else (+ 1 (min (edit-dist/list a-lst (cdr b-lst))
+                                          (edit-dist/list (cdr a-lst) b-lst)
+                                          (edit-dist/list (cdr a-lst) (cdr b-lst))))])))
+             (hash-set! ht (list a-lst b-lst) result)
+             result))))
+                 (edit-dist/list a-lst b-lst)))
+
+(editdist "cat" "bat")
+(editdist "fly" "flying")
+(editdist "grave" "groovy")
+(editdist "alpha" "omega")
+(editdist "asdgfhnnrsdgwerwfsfefsev4zwgh" "qqwertvnrsdgwerwfsfefsev4zwgnnhdrg")
+
+
