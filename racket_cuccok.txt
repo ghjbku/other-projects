@@ -801,3 +801,4 @@ szerkesztési távolság(edit distance), levenstein-távolság
 
 ((f 1) 3)
 ((f 1) 2)
+-------closure--------
