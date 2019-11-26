@@ -774,4 +774,30 @@ szerkesztési távolság(edit distance), levenstein-távolság
 (editdist "alpha" "omega")
 (editdist "asdgfhnnrsdgwerwfsfefsev4zwgh" "qqwertvnrsdgwerwfsfefsev4zwgnnhdrg")
 
+(define (osztoi n)
+  (let loop((i(exact-floor n)) (lst '()) (n n))
+    (cond [(< i 1) lst]
+          [(= 0 (modulo n i)) (loop (sub1 i) (cons i (cons(quotient n i) lst)) n)]
+          [else (loop (sub1 i) lst n)]
+          ))
 
+ )
+(osztoi 220)
+
+(define (osztoi2 n)
+  (define (loop i lst)
+    (cond [(< i 1) lst]
+          [(= 0 (modulo n i)) (loop (sub1 i) (cons i (cons(quotient n i) lst)))]
+          [else (loop (sub1 i) lst)]
+          ))
+  (loop (exact-floor (sqrt n)) '()))
+(osztoi2 220)
+(osztoi2 284)
+
+(define (f x)
+  (define (g y)
+    (+ x y))
+  g)
+
+((f 1) 3)
+((f 1) 2)
