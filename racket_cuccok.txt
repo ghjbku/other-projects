@@ -802,3 +802,19 @@ szerkesztési távolság(edit distance), levenstein-távolság
 ((f 1) 3)
 ((f 1) 2)
 -------closure--------
+
+
+(define (osztoi3 n)
+  (filter (lambda (e)(= 0 (modulo n e))
+            )
+          (map add1 (build-list (sub1 n) values))))
+	 
+	 
+	 (define (osztoi4 n)
+   (filter (lambda (e)(= 0 (modulo n e)))
+           (range 1 n))
+  )
+
+currying
+
+
