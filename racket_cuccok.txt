@@ -777,7 +777,8 @@ szerkesztési távolság(edit distance), levenstein-távolság
 (define (osztoi n)
   (let loop((i(exact-floor n)) (lst '()) (n n))
     (cond [(< i 1) lst]
-          [(= 0 (modulo n i)) (loop (sub1 i) (cons i (cons(quotient n i) lst)) n)]
+          [(= 0 (modulo n i)) (loop (sub1 i)
+          (cons i (cons(quotient n i) lst)) n)]
           [else (loop (sub1 i) lst n)]
           ))
 
@@ -816,5 +817,66 @@ szerkesztési távolság(edit distance), levenstein-távolság
   )
 
 currying
+
+f: X * Y -> Z adott
+
+vezessünk be egy új, h függvényt a következőképpen:
+
+h: X -> (Y -> Z)
+
+használata: h(x) (y) = f(x,y)
+úgy is jelölhetjük: curry(f)=h
+
+(define (divisors-of n)
+  (filter(lambda(e)(= 0 ((curry modulo n)e)
+                   )
+         )
+         (range 1 n)))
+
+(define (divisors-of2 n)
+  (filter(lambda(e)((curry = 0)((curry modulo n)e)
+                   )
+         )
+         (range 1 n)))
+
+(define (divisors-of3 n)
+  (filter(compose (curry = 0)(curry modulo n))
+                   
+         
+         (range 1 n)))
+
+1)
+irjon predikátumot (#t vagy #f értéket visszaadó függvényt), amely a paramétereként
+ megadott listáról eldönti, hogy palindróm lista-e(az elemek sorrendje előlről 
+ hátrafelé azonos a hátulról előre vett sorrendjünkkel)
+A megoldáshoz ne használja a reverse függvényt
+
+2)def. azt a fvg-t, amely a pascal-háromszög n-edik sorának az elemeit 
+adja meg egy listában.
+
+#lang racket
+(define (haromszog n)
+  (let loop((i n) (lst '()) (n n))
+    (cond [(= n 1) (let (lst '(1 1)) )]
+          [(< n 1) (let (lst '(1)) )]
+          [(>= n 2) (let (lst ))])
+          ;[else (loop (sub1 i) lst n)]
+  ))
+
+3)def fgv- amely a paramétereként megadott, egészeket tartalmazó 
+lista elemeit egy permutációként tekinti, és előállítja a listaelemek 
+lexikografikusan rákövetkező permutációját.
+
+4)yacht játék 5 elemű lista kiértékelés
+
+5)xor törés
+
+6)def fv, amely a 10k-nél kisebb olyan számokat adja vissza egy listában, 
+amelnyek a forditottjukat vett összege palindrom szám.
+47+74=121 ->a 47 és a 74 is bekerül a listába
+
+
+
+
 
 
