@@ -8,6 +8,13 @@
           (else #f)
           )))
 
+(define (my-remove value lst)
+  (cond
+
+        [(null? lst) lst]
+        [(= value (car lst)) (my-remove value (cdr lst))]
+        [else (append (list (car lst)) (my-remove value (cdr lst)))]))
+
 (define (zipper a b c)
   (let ((a-lst (string->list a)) (b-lst (string->list b)) (c-lst (string->list c)))
     (define (zipper/list a-lst b-lst c-lst)
