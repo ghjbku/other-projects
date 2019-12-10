@@ -133,3 +133,29 @@
   (do ([n1 n (if (even? n1) (/ n1 2) (+ (* 3 n1) 1))] [c 1 (+ c 1)]) ((= n1 1) c)))
 
 (collatzdo 23)
+
+ 
+
+#|
+Definiáljon függvényt, amely a 10000nél kisebb olyan számokat adja vissza egy listában, amelyeknek a fordítottjukkal vett összege palindrom szám.
+
+|#
+
+(define (number->list num)
+  (string->list (number->string num)))
+
+(define (list->number lst)
+  (string->number (list->string lst)))
+
+(define (palindromstr str)
+  (palindrom (string->list str))) ;Implenetáció feljebb ^
+
+(define (pdszamok n)
+  (filter (lambda (i)
+             (palindromstr (number->string (+ i (list->number (reverse (number->list i)))))))
+  (range 0 n)))
+
+ 
+
+(pdszamok 100)
+(pdszamok 10000)
