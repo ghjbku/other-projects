@@ -5,12 +5,13 @@ table{
     background-color: rgb(65, 60, 60);
     margin: 1em auto;
     border: thin solid white;
+    width:20%;
     
 }
 td{
     background-color: rgb(65, 60, 60);
-    height: 3em;
-    width: 3em;
+    height: 3.1em;
+    width: 3.1em;
 }
 
 td.egy,td.ketto,td.harom,td.negy,td.ot{
@@ -19,17 +20,43 @@ td.egy,td.ketto,td.harom,td.negy,td.ot{
     font-size: 1em;
     font-weight: bold;
 }
+td.egy:hover{
+    border:0.2em solid green;
+    width: 2.7em;
+    height: 2.7em;
+}
+
 td.egy{
     border-top: 0.25em solid green;
+}
+td.ketto:hover{
+    border:0.2em solid red;
+    width: 2.7em;
+    height: 2.7em;
 }
 td.ketto{
     border-top: 0.25em solid red;
 }
+td.harom:hover{
+    border:0.2em solid yellow;
+    width: 2.7em;
+    height: 2.7em;
+}
 td.harom{
     border-top: 0.25em solid yellow;
 }
+td.negy:hover{
+    border:0.2em solid blue;
+    width: 2.7em;
+    height: 2.7em;
+}
 td.negy{
     border-top: 0.25em solid blue;
+}
+td.ot:hover{
+    border:0.2em solid orange;
+    width: 2.7em;
+    height: 2.7em;
 }
 td.ot{
     border-top: 0.25em solid orange;
@@ -74,4 +101,8 @@ td.narancs{
     background-color: grey;
     width: 0.5em;
     height: 0.5em;
+}
+td.zold:hover,td.piros:hover,td.kek:hover,td.narancs:hover,td.sarga:hover{
+border-width: 0em;
+background: none;
 }
