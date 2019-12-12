@@ -1,0 +1,77 @@
+html{
+    background-color: black;
+}
+table{
+    background-color: rgb(65, 60, 60);
+    margin: 1em auto;
+    border: thin solid white;
+    
+}
+td{
+    background-color: rgb(65, 60, 60);
+    height: 3em;
+    width: 3em;
+}
+
+td.egy,td.ketto,td.harom,td.negy,td.ot{
+    background-color: white;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+td.egy{
+    border-top: 0.25em solid green;
+}
+td.ketto{
+    border-top: 0.25em solid red;
+}
+td.harom{
+    border-top: 0.25em solid yellow;
+}
+td.negy{
+    border-top: 0.25em solid blue;
+}
+td.ot{
+    border-top: 0.25em solid orange;
+}
+
+td.sarga{
+    border: medium solid yellow;
+    margin: 1em auto;
+    border-radius: 3em;
+    background-color: grey;
+    width: 0.5em;
+    height: 0.5em;
+}
+td.piros{
+    border: medium solid red;
+    margin: 1em auto;
+    border-radius: 3em;
+     background-color: grey;
+    width: 0.5em;
+    height: 0.5em;
+}
+td.zold{
+    border: medium solid green;
+    margin: 1em auto;
+    border-radius: 3em;
+    background-color: grey;
+    width: 0.5em;
+    height: 0.5em;
+}
+td.kek{
+    border: medium solid blue;
+    margin: 1em auto;
+    border-radius: 3em;
+    background-color: grey;
+    width: 0.5em;
+    height: 0.5em;
+}
+td.narancs{
+    border: medium solid orange;
+    margin: 1em auto;
+    border-radius: 3em;
+    background-color: grey;
+    width: 0.5em;
+    height: 0.5em;
+}
